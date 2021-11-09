@@ -1,0 +1,12 @@
+{
+  "app.global.view": "View detail",
+  "app.global.search": "Search by name",
+  "app.global.loading": "Loading...",
+  "app.detail.birthdate": "Date of birth",
+  "app.detail.occupation": "Ocupation",
+  "app.detail.status": "Vital status",
+  "app.detail.portrayed": "Starred by",
+  "app.detail.quote": "Quote",
+  "app.detail.birthdate.unknown": "Unknown",
+  "app.detail.quote.nonexistant": "Quote not available or non existent"
+}

@@ -1,0 +1,12 @@
+{
+  "app.global.view": "Ver detalle",
+  "app.global.search": "Buscar por nombre",
+  "app.global.loading": "Cargando...",
+  "app.detail.birthdate": "Fecha de nacimiento",
+  "app.detail.occupation": "Profesión",
+  "app.detail.status": "Estado vital",
+  "app.detail.portrayed": "Protagonizado por",
+  "app.detail.quote": "Cita",
+  "app.detail.birthdate.unknown": "Desconocida",
+  "app.detail.quote.nonexistant": "Cita no disponible o inexistente"
+}

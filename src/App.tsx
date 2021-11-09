@@ -1,25 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
+import { createTheme, ThemeProvider } from '@mui/material';
+import React, { useContext } from 'react';
+import { IntlProvider } from 'react-intl';
+import { useRoutes } from 'react-router';
 import './App.css';
+import { AppContext } from './context/app/app-context';
+import { CharactersProvider } from './context/characters/characters-provider';
+import { appRoutes } from './routes/routes';
 
 function App() {
+  const routerOutlet = useRoutes(appRoutes);
+  const appContext = useContext(AppContext);
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#29773E',
+      },
+    },
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <IntlProvider
+      messages={appContext.messages}
+      locale={appContext.currentLocale}
+      defaultLocale="es"
+    >
+      <ThemeProvider theme={theme}>
+        <CharactersProvider>{routerOutlet}</CharactersProvider>
+      </ThemeProvider>
+    </IntlProvider>
   );
 }
 
