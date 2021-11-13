@@ -78,11 +78,8 @@ const Detail: FC<any> = (props) => {
         try {
           setQuote(getQuoteRes.data[0].quote);
         } catch (errorSettingQuote) {
-          console.error(errorSettingQuote);
+          // If there's no result, there's no quotes for this character, this is not strictly an error
           setQuote(undefined);
-          enqueueSnackbar(<FormattedMessage id="app.global.error" />, {
-            variant: 'error',
-          });
         }
       })
       .catch((errorGettingQuote) => {

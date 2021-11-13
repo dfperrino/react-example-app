@@ -3,7 +3,6 @@ import { SnackbarProvider } from 'notistack';
 import React, { useContext } from 'react';
 import { IntlProvider } from 'react-intl';
 import { useRoutes } from 'react-router';
-import './App.css';
 import { AppContext } from './context/app/app-context';
 import { CharactersProvider } from './context/characters/characters-provider';
 import { appRoutes } from './routes/routes';
