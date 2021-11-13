@@ -1,4 +1,5 @@
 import { act, render, screen } from '@testing-library/react';
+import { SnackbarProvider } from 'notistack';
 import React, { FC } from 'react';
 import { IntlProvider } from 'react-intl';
 import { useParams } from 'react-router';
@@ -25,7 +26,7 @@ const Wrapper: FC<any> = (props) => (
       <CharactersContext.Provider
         value={{ characters: [], setCharacters: jest.fn() }}
       >
-        {props.children}
+        <SnackbarProvider>{props.children}</SnackbarProvider>
       </CharactersContext.Provider>
     </IntlProvider>
   </Router>
