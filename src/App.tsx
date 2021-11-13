@@ -1,4 +1,5 @@
 import { createTheme, ThemeProvider } from '@mui/material';
+import { SnackbarProvider } from 'notistack';
 import React, { useContext } from 'react';
 import { IntlProvider } from 'react-intl';
 import { useRoutes } from 'react-router';
@@ -25,7 +26,9 @@ function App() {
       defaultLocale="es"
     >
       <ThemeProvider theme={theme}>
-        <CharactersProvider>{routerOutlet}</CharactersProvider>
+        <CharactersProvider>
+          <SnackbarProvider>{routerOutlet}</SnackbarProvider>
+        </CharactersProvider>
       </ThemeProvider>
     </IntlProvider>
   );

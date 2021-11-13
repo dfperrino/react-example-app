@@ -13,6 +13,7 @@ import {
 } from '@mui/material';
 import { SxProps } from '@mui/system';
 import { DateTime } from 'luxon';
+import { useSnackbar } from 'notistack';
 import React, { FC, useContext, useEffect, useMemo, useState } from 'react';
 import { FormattedDate, FormattedList, FormattedMessage } from 'react-intl';
 import { useNavigate, useParams } from 'react-router';
@@ -55,6 +56,7 @@ const Detail: FC<any> = (props) => {
   const [quote, setQuote] = useState<string | undefined>();
   const params = useParams();
   const navigate = useNavigate();
+  const { enqueueSnackbar } = useSnackbar();
 
   const processedQuote = useMemo(() => {
     if (quote) {
@@ -76,12 +78,19 @@ const Detail: FC<any> = (props) => {
         try {
           setQuote(getQuoteRes.data[0].quote);
         } catch (errorSettingQuote) {
+          console.error(errorSettingQuote);
           setQuote(undefined);
+          enqueueSnackbar(<FormattedMessage id="app.global.error" />, {
+            variant: 'error',
+          });
         }
       })
       .catch((errorGettingQuote) => {
         console.error(errorGettingQuote);
         setQuote(undefined);
+        enqueueSnackbar(<FormattedMessage id="api.get-quote.error" />, {
+          variant: 'error',
+        });
       })
       .finally(() => setIsLoadingQuote(false));
   };
@@ -96,10 +105,16 @@ const Detail: FC<any> = (props) => {
             generateNewQuote(res.data[0].name);
           } catch (errorSettingCharacter) {
             console.error(errorSettingCharacter);
+            enqueueSnackbar(<FormattedMessage id="app.global.error" />, {
+              variant: 'error',
+            });
           }
         })
         .catch((errorGettingCharacter) => {
           console.error(errorGettingCharacter);
+          enqueueSnackbar(<FormattedMessage id="api.get-character.error" />, {
+            variant: 'error',
+          });
         });
     } else if (character) {
       generateNewQuote(character.name);

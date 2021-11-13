@@ -8,5 +8,9 @@
   "app.detail.portrayed": "Protagonizado por",
   "app.detail.quote": "Cita",
   "app.detail.birthdate.unknown": "Desconocida",
-  "app.detail.quote.nonexistant": "Cita no disponible o inexistente"
+  "app.detail.quote.nonexistant": "Cita no disponible o inexistente",
+  "api.get-characters.error": "Error cargando los personajes",
+  "api.get-character.error": "Error cargando un personaje concreto",
+  "api.get-quote.error": "Error cargando la cita del personaje",
+  "app.global.error": "Se ha producido un error general, de persistir contacte con el equipo de soporte"
 }

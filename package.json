@@ -12,6 +12,7 @@
     "@types/react": "17.0.0",
     "@types/react-dom": "17.0.0",
     "cypress": "9.0.0",
+    "ramda": "0.27.1",
     "react-scripts": "4.0.3",
     "typescript": "4.1.2"
   },
@@ -24,6 +25,7 @@
     "husky": "7.0.4",
     "lint-staged": "11.2.6",
     "luxon": "2.1.1",
+    "notistack": "2.0.3",
     "prettier": "2.4.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
@@ -40,7 +42,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && node check-i18n.js"
     }
   },
   "lint-staged": {

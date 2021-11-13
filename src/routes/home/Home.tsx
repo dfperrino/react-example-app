@@ -16,6 +16,7 @@ import {
   LinearProgress,
   Typography,
 } from '@mui/material';
+import { useSnackbar } from 'notistack';
 import React, { FC, useContext, useEffect, useMemo, useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { useNavigate } from 'react-router';
@@ -27,6 +28,7 @@ const Home: FC<any> = (props) => {
   const navigate = useNavigate();
   const [filterTxt, setFilterTxt] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const { enqueueSnackbar } = useSnackbar();
 
   useEffect(() => {
     // If we have all characters loaded, we avoid calling api again.
@@ -40,10 +42,16 @@ const Home: FC<any> = (props) => {
             charactersContext.setCharacters(res.data);
           } catch (error) {
             console.error('error');
+            enqueueSnackbar(<FormattedMessage id="app.global.error" />, {
+              variant: 'error',
+            });
           }
         })
         .catch((errorGettingAllCharacters) => {
           console.error(errorGettingAllCharacters);
+          enqueueSnackbar(<FormattedMessage id="api.get-characters.error" />, {
+            variant: 'error',
+          });
         })
         .finally(() => {
           setIsLoading(false);
