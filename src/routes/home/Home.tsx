@@ -64,6 +64,10 @@ const Home: FC<any> = (props) => {
     setFilterTxt(val.target.value);
   };
 
+  /**
+   * We use a memo for the characters to not mutate the "all characters" info,
+   * we get here the filtered characters, and we don't need additional api calls
+   */
   const characters = useMemo(() => {
     return charactersContext.characters.filter((character) =>
       character.name.toLowerCase().includes(filterTxt.toLowerCase())

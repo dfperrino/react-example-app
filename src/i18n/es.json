@@ -12,5 +12,7 @@
   "api.get-characters.error": "Error cargando los personajes",
   "api.get-character.error": "Error cargando un personaje concreto",
   "api.get-quote.error": "Error cargando la cita del personaje",
-  "app.global.error": "Se ha producido un error general, de persistir contacte con el equipo de soporte"
+  "app.global.error": "Se ha producido un error general, de persistir contacte con el equipo de soporte",
+  "app.nomatch.go": "Volver a inicio",
+  "app.nomatch.message": "Lo que intentas ver no existe"
 }

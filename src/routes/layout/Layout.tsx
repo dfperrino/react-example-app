@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 import logo from '../../assets/logo.png';
 import { AppContext } from '../../context/app/app-context';
 
-const Layout: FC<any> = (props) => {
+const Layout: FC<any> = () => {
   const appContext = useContext(AppContext);
   const navigate = useNavigate();
 
@@ -31,6 +31,10 @@ const Layout: FC<any> = (props) => {
           <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
             Breacting Bad App Demo
           </Typography>
+          {/**
+           * We have here the available languages for the application from the context
+           * if we click on one of them, we call the function from the context to change the current language (hot mode)
+           */}
           {appContext.availableLangs.map((lang) => (
             <Button
               key={`language_${lang}`}

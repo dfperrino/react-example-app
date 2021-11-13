@@ -12,5 +12,7 @@
   "api.get-characters.error": "Error loading characters",
   "api.get-character.error": "Error loading a single character",
   "api.get-quote.error": "Error loading the character random quote",
-  "app.global.error": "There's been an error. If it continues, please contact support"
+  "app.global.error": "There's been an error. If it continues, please contact support",
+  "app.nomatch.go": "Back to Home",
+  "app.nomatch.message": "Page not found"
 }
