@@ -18,5 +18,5 @@ export const getAllCharacters = () =>
 
 export const getCharacterById = (id: number) =>
   axios.get<IGetCharactersResponse[]>(
-    `${getApiEndpoint('get_all_characters')}/${id}`
+    `${getApiEndpoint('get_all_characters')}/${id || ''}`
   );

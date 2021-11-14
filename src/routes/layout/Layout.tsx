@@ -38,6 +38,7 @@ const Layout: FC<any> = () => {
           {appContext.availableLangs.map((lang) => (
             <Button
               key={`language_${lang}`}
+              data-testid={`change-locale-button-${lang}`}
               disabled={lang === appContext.currentLocale}
               onClick={() => appContext.changeLocale(lang)}
               color="inherit"

@@ -10,5 +10,5 @@ export interface IGetRandomQuoteResponse {
 
 export const getRandomQuoteByAuthor = (author: string) =>
   axios.get<IGetRandomQuoteResponse[]>(
-    `${getApiEndpoint('get_random_quote')}${author.replace(' ', '+')}`
+    `${getApiEndpoint('get_random_quote')}${author?.replace(' ', '+')}`
   );

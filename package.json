@@ -38,7 +38,18 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "test:e2e": "cypress open"
+    "test:e2e": "cypress open",
+    "test:coverage": "react-scripts test --coverage --watchAll=false"
+  },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/src/context"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!src/**/*.{d.ts}",
+      "!src/*.{ts,tsx}"
+    ]
   },
   "husky": {
     "hooks": {
