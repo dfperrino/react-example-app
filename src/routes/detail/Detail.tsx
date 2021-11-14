@@ -188,10 +188,16 @@ const Detail: FC<any> = (props) => {
           </Typography>
         </CardContent>
         <Box px={2} pb={2} mt={-1}>
-          <IconButton onClick={() => navigate('/')}>
+          <IconButton
+            data-testid="detail-go-home-button"
+            onClick={() => navigate('/')}
+          >
             <ArrowBack />
           </IconButton>
-          <IconButton onClick={() => generateNewQuote(character.name)}>
+          <IconButton
+            data-testid="detail-new-quote-button"
+            onClick={() => generateNewQuote(character.name)}
+          >
             <Refresh />
           </IconButton>
         </Box>

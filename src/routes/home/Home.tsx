@@ -41,7 +41,7 @@ const Home: FC<any> = (props) => {
           try {
             charactersContext.setCharacters(res.data);
           } catch (error) {
-            console.error('error');
+            console.error(error);
             enqueueSnackbar(<FormattedMessage id="app.global.error" />, {
               variant: 'error',
             });
@@ -84,6 +84,7 @@ const Home: FC<any> = (props) => {
         </InputLabel>
         <Input
           data-testid="input-filter"
+          inputProps={{ 'data-testid': 'input-filter-input' }}
           id="filter"
           type={'text'}
           value={filterTxt}
